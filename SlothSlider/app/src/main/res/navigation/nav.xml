@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav"
+    app:startDestination="@id/nav_popular">
+
+    <fragment
+        android:id="@+id/nav_popular"
+        android:name="com.example.slothslider.HomeContentFragment"
+        tools:layout="@layout/home_fragment">
+        <argument
+            android:name="text_id"
+            android:defaultValue="@string/menu_popular"
+            app:argType="reference" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_buscar"
+        android:name="com.example.slothslider.HomeContentFragment"
+        android:label="@string/menu_buscar"
+        tools:layout="@layout/home_fragment">
+        <argument
+            android:name="text_id"
+            android:defaultValue="@string/menu_buscar"
+            app:argType="reference" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_perfil"
+        android:name="com.example.slothslider.HomeContentFragment"
+        android:label="@string/menu_perfil"
+        tools:layout="@layout/home_fragment">
+        <argument
+            android:name="text_id"
+            android:defaultValue="@string/menu_perfil"
+            app:argType="reference" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_ver_mas_tarde"
+        android:name="com.example.slothslider.HomeContentFragment"
+        android:label="@string/menu_ver_mas_tarde"
+        tools:layout="@layout/home_fragment">
+        <argument
+            android:name="text_id"
+            android:defaultValue="@string/menu_ver_mas_tarde"
+            app:argType="reference" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_listas"
+        android:name="com.example.slothslider.HomeContentFragment"
+        android:label="@string/menu_listas"
+        tools:layout="@layout/home_fragment">
+        <argument
+            android:name="text_id"
+            android:defaultValue="@string/menu_listas"
+            app:argType="reference" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_diario"
+        android:name="com.example.slothslider.DiarioContentFragment"
+        android:label="@string/menu_diario"
+        tools:layout="@layout/diario_fragment">
+        <argument
+            android:name="text_id"
+            android:defaultValue="@string/menu_diario"
+            app:argType="reference" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_reviews"
+        android:name="com.example.slothslider."
+        android:label="@string/menu_reviews"
+        tools:layout="@layout/home_fragment">
+        <argument
+            android:name="text_id"
+            android:defaultValue="@string/menu_reviews"
+            app:argType="reference" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_ajustes"
+        android:name="com.example.slothslider.AjustesContentFragment"
+        android:label="@string/menu_ajustes"
+        tools:layout="@layout/ajustes_fragment">
+        <argument
+            android:name="text_id"
+            android:defaultValue="@string/menu_ajustes"
+            app:argType="reference" />
+    </fragment>
+
+</navigation>

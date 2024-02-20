@@ -1,5 +1,7 @@
 package com.example.slothslider;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -15,6 +17,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.appcompat.widget.Toolbar;
 import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
@@ -29,13 +32,14 @@ public class HomeActivity extends AppCompatActivity
     private Toolbar toolbar;
     private AppBarConfiguration appBarConfiguration;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         setupToolbar();
         setupDrawer();
-        setupNavigationView();
+        //setupNavigationView();
     }
 
     private void setupToolbar() {
@@ -45,37 +49,31 @@ public class HomeActivity extends AppCompatActivity
     private void setupDrawer() {
         drawerLayout = findViewById(R.id.drawer_layout);
 
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawerLayout, toolbar, R.string.navigation_drawer_open,
-                R.string.navigation_drawer_close);
-        drawerLayout.addDrawerListener(toggle);
-        toggle.syncState();
+        NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment);
+        NavController navController = navHostFragment.getNavController();
+        navigationView = findViewById(R.id.navigation_view);
+        NavigationUI.setupWithNavController(navigationView, navController);
+
+        appBarConfiguration =
+                new AppBarConfiguration.Builder(R.id.nav_popular, R.id.nav_buscar, R.id.nav_perfil, R.id.nav_ver_mas_tarde, R.id.nav_listas
+                        ,R.id.nav_diario, R.id.nav_reviews, R.id.nav_ajustes)
+                        .setOpenableLayout(drawerLayout)
+                        .build();
+
+        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
 
         drawerLayout.addDrawerListener(this);
-
-        setupNavigationView();
     }
 
-    private void setupNavigationView() {
-        navigationView = findViewById(R.id.navigation_view);
-        navigationView.setNavigationItemSelectedListener(this);
-        setDefaultMenuItem();
 
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
+        return NavigationUI.navigateUp(navController, appBarConfiguration)
+                || super.onSupportNavigateUp();
     }
 
-    private void setDefaultMenuItem() {
-        MenuItem menuItem = navigationView.getMenu().getItem(0);
-        onNavigationItemSelected(menuItem);
-        menuItem.setChecked(true);
-    }
-
-    private void setupHeader() {
-        View header = navigationView.getHeaderView(0);
-        header.findViewById(R.id.header_title).setOnClickListener(view -> Toast.makeText(
-                HomeActivity.this,
-                getString(R.string.title_click),
-                Toast.LENGTH_SHORT).show());
-    }
 
     @Override
     public void onBackPressed() {
@@ -89,7 +87,7 @@ public class HomeActivity extends AppCompatActivity
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         int titleId = getTitle(menuItem);
-        showFragment(titleId);
+       // showFragment(titleId);
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
 
@@ -118,15 +116,7 @@ public class HomeActivity extends AppCompatActivity
 
     }
 
-    private void showFragment (@StringRes int titleId) {
-        Fragment fragment = HomeContentFragment.newInstance(titleId);
-        getSupportFragmentManager()
-                .beginTransaction()
-                .replace(R.id.home_content, fragment)
-                .commit();
 
-        setTitle(getString(titleId));
-    }
 
 
 
