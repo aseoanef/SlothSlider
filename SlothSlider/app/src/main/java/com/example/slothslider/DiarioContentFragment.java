@@ -52,7 +52,6 @@ public class DiarioContentFragment extends Fragment {
     Bundle savedInstanceState) {
         View layout = inflater.inflate(R.layout.diario_fragment, container, false);
         recyclerView = layout.findViewById(R.id.diario_recycler); // Obtener una referencia al RecyclerView desde el diseño
-
         JsonArrayRequest request = new JsonArrayRequest(
                 Request.Method.GET,
                 "https://raw.githubusercontent.com/aseoanef/SlothSlider/main/FilmsJSON",
