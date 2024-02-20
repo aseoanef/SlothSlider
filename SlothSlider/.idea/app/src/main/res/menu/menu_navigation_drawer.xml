@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_popular"
+            android:icon="@drawable/tendencias"
+            android:title="popular" />
+
+        <item
+            android:id="@+id/nav_buscar"
+            android:icon="@drawable/buscar"
+            android:title="buscador" />
+
+        <item
+            android:id="@+id/nav_perfil"
+            android:icon="@drawable/perfil"
+            android:title="perfil" />
+
+        <item
+            android:id="@+id/nav_ver_mas_tarde"
+            android:icon="@drawable/ver_mas_tarde_1"
+            android:title="ver más tarde" />
+
+        <item
+            android:id="@+id/nav_listas"
+            android:icon="@drawable/lista"
+            android:title="listas" />
+        <item
+            android:id="@+id/nav_diario"
+            android:icon="@drawable/diario"
+            android:title="diario" />
+        <item
+            android:id="@+id/nav_reviews"
+            android:icon="@drawable/review_1"
+            android:title="reviews" />
+        <item
+            android:id="@+id/nav_ajustes"
+            android:icon="@drawable/ajustes"
+            android:title="ajustes" />
+
+    </group>
+</menu>
