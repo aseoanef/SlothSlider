@@ -8,8 +8,9 @@
 
     <fragment
         android:id="@+id/nav_popular"
-        android:name="com.example.slothslider.HomeContentFragment"
-        tools:layout="@layout/home_fragment">
+        android:name="com.example.slothslider.TrendingFragment"
+        android:label="Popular"
+        tools:layout="@layout/trending_fragment">
         <argument
             android:name="text_id"
             android:defaultValue="@string/menu_popular"
@@ -73,7 +74,7 @@
 
     <fragment
         android:id="@+id/nav_reviews"
-        android:name="com.example.slothslider."
+        android:name="com.example.slothslider.reviews"
         android:label="@string/menu_reviews"
         tools:layout="@layout/home_fragment">
         <argument

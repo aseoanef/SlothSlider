@@ -12,12 +12,15 @@ import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import android.app.Activity;
 import androidx.appcompat.app.AlertDialog;
 import androidx.annotation.Nullable;
 import androidx.annotation.StringRes;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+
+import com.android.volley.RequestQueue;
 
 public class AjustesContentFragment extends Fragment  {
     private static final String TEXT_ID = "text_id";
@@ -70,6 +73,10 @@ public class AjustesContentFragment extends Fragment  {
             @Override
             public void onClick(View v) {
 
+                //Intent myIntent = new Intent(this, WebViewActivity.class);
+               // startActivity(myIntent);
+
+
                 // Crear un Intent para iniciar WebViewActivity
                 Intent myIntent = new Intent(getActivity(), WebViewActivity.class);
 
@@ -79,6 +86,7 @@ public class AjustesContentFragment extends Fragment  {
 
                 // Iniciar la actividad usando el Intent
                 getActivity().startActivity(myIntent);
+
             }
         });
 

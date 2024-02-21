@@ -3,6 +3,7 @@ package com.example.slothslider;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.webkit.WebView;
@@ -14,15 +15,15 @@ public class WebViewActivity extends AppCompatActivity {
     private int id;
 
 
+    @SuppressLint("SetJavaScriptEnabled")
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_webview);
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
-        id = (Integer) bundle.getInt("ID-WEB");
+        id = bundle.getInt("ID-WEB");
 
-
-        webView = (WebView) findViewById(R.id.webView);
+        webView = findViewById(R.id.webView);
         webView.getSettings().setJavaScriptEnabled(true);
 
         if (id==1){

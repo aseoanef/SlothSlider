@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Titulo de la pelicula"/>
+    <EditText
+        android:id="@+id/reviewtext"
+        android:layout_height="200dp"
+        android:layout_width="match_parent"
+        app:layout_constraintTop_toBottomOf="@+id/title"
+        android:hint="write review..."/>
+
+    <TextView
+        android:id="@+id/scoretext"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/reviewtext"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="Score:"/>
+    <RadioGroup
+        android:id="@+id/scorenumber"
+        android:text="5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintStart_toEndOf="@+id/scoretext"
+        app:layout_constraintTop_toBottomOf="@id/reviewtext">
+        <RadioButton
+            android:text="1"
+            android:id="@+id/scorenumber1"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"/>
+        <RadioButton
+            android:text="2"
+            android:id="@+id/scorenumber2"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"/>
+        <RadioButton
+            android:text="3"
+            android:id="@+id/scorenumber3"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"/>
+        <RadioButton
+            android:text="3"
+            android:id="@+id/scorenumber4"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"/>
+        <RadioButton
+            android:text="4"
+            android:id="@+id/scorenumber5"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"/></RadioGroup>
+    <Button
+        android:id="@+id/send"
+        android:layout_height="0dp"
+        android:layout_width="50dp"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintTop_toBottomOf="@+id/reviewtext"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/sendicon"
+        app:layout_constraintStart_toStartOf="@+id/send"
+        app:layout_constraintEnd_toEndOf="@+id/send"
+        app:layout_constraintTop_toTopOf="@+id/send"
+        app:layout_constraintBottom_toBottomOf="@+id/send"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

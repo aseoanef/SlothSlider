@@ -29,8 +29,6 @@
             android:text="@string/app_name"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium.Inverse"
             app:drawableStartCompat="@drawable/slothsliderlogo_recortado"
-            app:drawableStartCompat="@mipmap/ic_launcher"
-
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
