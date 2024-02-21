@@ -1,0 +1,18 @@
+[
+  
+{"name": "Cars",
+"description": "El aspirante a campeón de carreras Rayo McQueen parece que está a punto de conseguir el éxito. Su actitud arrogante se desvanece cuando llega a una pequeña comunidad olvidada que le enseña las cosas importantes de la vida que había olvidado.",
+"image_url": "https://raw.githubusercontent.com/GaelRGuerreiro/fotosSlothSlider/main/Cars.jpg"
+},
+  
+{"name": "Saltburn",
+"description": "Angustiado por la desafortunada situación de vida de su compañero Oliver, Félix, un estudiante rico, lo invita a su finca. Pronto, una serie de acontecimientos horribles envuelven a la familia de Félix.",
+"image_url": "https://raw.githubusercontent.com/GaelRGuerreiro/fotosSlothSlider/main/Saltburn.jpg"
+},
+  
+{"name": "Pacific Rim",
+"description": "Hace mucho tiempo, legiones de criaturas monstruosas llamados Kaiju surgen del mar, llevando consigo una guerra. Para pelear a los Kaiju, la humanidad desarrolla robots gigantes llamados Jaegers, diseñados para ser dirigidos por dos humanos. Sin embargo, ni los Jaegers son suficientes para vencer a Kaiju, y la humanidad está al borde de la derrota. La última esperanza de la humanidad descansa en un ex-piloto fracasado, una aprendiz y un viejo y obsoleto Jaeger.",
+"image_url":  "https://raw.githubusercontent.com/GaelRGuerreiro/fotosSlothSlider/main/La_%20sirenita.jpg"
+},
+ 
+]
