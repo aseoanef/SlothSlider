@@ -9,9 +9,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class DetailActivity extends AppCompatActivity {
 
-    private TextView nombre; // Agregar un comentario sobre el propósito de este TextView
-    private ImageView film; // Agregar un comentario sobre el propósito de esta ImageView
-    private TextView description; // Agregar un comentario sobre el propósito de este TextView
+    private TextView nombre;
+    private ImageView film;
+    private TextView description;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

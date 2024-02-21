@@ -29,7 +29,7 @@
 
     <fragment
         android:id="@+id/nav_perfil"
-        android:name="com.example.slothslider.HomeContentFragment"
+        android:name="com.example.slothslider.ProfileActivity"
         android:label="@string/menu_perfil"
         tools:layout="@layout/home_fragment">
         <argument
@@ -40,9 +40,9 @@
 
     <fragment
         android:id="@+id/nav_ver_mas_tarde"
-        android:name="com.example.slothslider.HomeContentFragment"
+        android:name="com.example.slothslider.VerMasTardeContentFragment"
         android:label="@string/menu_ver_mas_tarde"
-        tools:layout="@layout/home_fragment">
+        tools:layout="@layout/ver_mas_tarde">
         <argument
             android:name="text_id"
             android:defaultValue="@string/menu_ver_mas_tarde"
@@ -51,7 +51,7 @@
 
     <fragment
         android:id="@+id/nav_listas"
-        android:name="com.example.slothslider.HomeContentFragment"
+        android:name="com.example.slothslider.ListasContentFragment"
         android:label="@string/menu_listas"
         tools:layout="@layout/home_fragment">
         <argument

@@ -20,8 +20,8 @@ android {
         release {
             isMinifyEnabled = false
             proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
+                    getDefaultProguardFile("proguard-android-optimize.txt"),
+                    "proguard-rules.pro"
             )
         }
     }
@@ -32,6 +32,11 @@ android {
 }
 
 dependencies {
+
+    implementation("com.squareup.picasso:picasso:2.71828")
+    implementation ("androidx.browser:browser:1.0.0")
+    implementation ("androidx.vectordrawable:vectordrawable:1.0.0")
+    implementation ("androidx.media:media:1.0.0")
     implementation ("com.github.bumptech.glide:glide:4.12.0")
     annotationProcessor ("com.github.bumptech.glide:compiler:4.12.0")
     implementation("androidx.appcompat:appcompat:1.6.1")

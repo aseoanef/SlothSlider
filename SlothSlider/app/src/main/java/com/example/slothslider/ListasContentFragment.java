@@ -30,15 +30,15 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DiarioContentFragment extends Fragment {
+public class ListasContentFragment extends Fragment {
     private static final String TEXT_ID = "text_id";
     private Intent intent;
     private Activity activity = getActivity();
     private RecyclerView recyclerView;
 
 
-    public static DiarioContentFragment newInstance(@StringRes int textId) {
-        DiarioContentFragment frag = new DiarioContentFragment();
+    public static ListasContentFragment newInstance(@StringRes int textId) {
+        ListasContentFragment frag = new ListasContentFragment();
 
         Bundle args = new Bundle();
         args.putInt(TEXT_ID, textId);
@@ -50,24 +50,22 @@ public class DiarioContentFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable
     Bundle savedInstanceState) {
-        View layout = inflater.inflate(R.layout.diario_fragment, container, false);
-        recyclerView = layout.findViewById(R.id.diario_recycler); // Obtener una referencia al RecyclerView desde el diseño
+        View layout = inflater.inflate(R.layout.listas, container, false);
+        recyclerView = layout.findViewById(R.id.listas_recycler);
 
         JsonArrayRequest request = new JsonArrayRequest(
                 Request.Method.GET,
-                "https://raw.githubusercontent.com/aseoanef/SlothSlider/main/FilmsJSON",
+                "https://raw.githubusercontent.com/aseoanef/SlothSlider/rama-gael/ShowInformationJSON",
                 null,
                 new Response.Listener<JSONArray>() {
                     @Override
                     public void onResponse(JSONArray response) {
-                        Toast.makeText(getActivity(), "PELICULAS RECIBIDAS", Toast.LENGTH_SHORT).show();
-                        // Procesar la respuesta JSON y crear una lista de objetos FilmData con los datos de la URL.
 
-                        List<FilmData> allThefilms = new ArrayList<>();
+                        List<Listas> allThefilms = new ArrayList<>();
                         for (int i = 0; i < response.length(); i++) {
                             try {
                                 JSONObject film = response.getJSONObject(i);
-                                FilmData data = new FilmData(film);
+                                Listas data = new Listas(film);
                                 allThefilms.add(data);
                             } catch (JSONException e) {
                                 e.printStackTrace();
@@ -75,7 +73,7 @@ public class DiarioContentFragment extends Fragment {
                         }
 
                         // Crear un adaptador con la lista de datos y la actividad asociada.
-                           FilmRecyclerViewAdapter adapter = new FilmRecyclerViewAdapter(allThefilms, activity);
+                        ListasRecyclerViewAdapter adapter = new ListasRecyclerViewAdapter(allThefilms, activity);
 
                         // Configurar el RecyclerView con el adaptador y un LinearLayoutManager.
                         recyclerView.setAdapter(adapter);
@@ -86,7 +84,7 @@ public class DiarioContentFragment extends Fragment {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         // Manejar los errores de la solicitud y mostrar un Toast con el mensaje de error.
-                        Toast.makeText(getActivity(), error.getMessage(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(), error.getMessage(), Toast.LENGTH_LONG).show();
                     }
                 }
         );

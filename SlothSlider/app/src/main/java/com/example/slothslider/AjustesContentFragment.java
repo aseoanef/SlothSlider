@@ -51,8 +51,8 @@ public class AjustesContentFragment extends Fragment  {
         politica.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent myIntent = new Intent(this, WebViewActivity.class);
-                startActivity(myIntent);
+               // Intent myIntent = new Intent(this, WebViewActivity.class);
+               // startActivity(myIntent);
             }
         });
 
