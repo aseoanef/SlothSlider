@@ -1,0 +1,38 @@
+[
+  
+{"name": "Peliculas Favoritas",
+"description": "El aspirante a campeón de carreras Rayo McQueen parece que está a punto de conseguir el éxito. Su actitud arrogante se desvanece cuando llega a una pequeña comunidad olvidada que le enseña las cosas importantes de la vida que había olvidado.",
+"image_url": "https://raw.githubusercontent.com/GaelRGuerreiro/fotosSlothSlider/main/Cars.jpg"
+},
+  
+{"name": "Meh",
+"description": "Para saldar su deuda con un mafioso, un joven con problemas de audición hace de conductor en atracos. Cuando por fin cree que se ha librado de su compromiso y pretende rehacer su vida, se ve obligado a retornar para un último golpe.",
+"image_url": "https://raw.githubusercontent.com/GaelRGuerreiro/fotosSlothSlider/main/Baby_Driver.jpg"
+},
+  
+{"name": "Volver a ver",
+"description": "Anhelando conocer el mundo más allá del mar, una joven sirena visita la superficie y se enamora del apuesto príncipe Eric. Siguiendo su corazón, hace un trato con la malvada bruja del mar, Úrsula, para experimentar la vida en tierra.",
+"image_url":  "https://raw.githubusercontent.com/GaelRGuerreiro/fotosSlothSlider/main/La_%20sirenita.jpg"
+},
+  
+{"name": "Peliculas de miedo",
+"description": "Unos años después de la Guerra de Secesión, el cazarrecompensas John Ruth viaja con su fugitiva Daisy Domergue a Red Rock, donde Ruth entregará a la mujer a la justicia. Por el camino se encuentran con Marquis Warren, un antiguo soldado de la Unión, y Chris Mannix, un sureño que afirma ser el sheriff. Los cuatro se refugian de una ventisca en un puerto de montaña donde conocen a otros cuatro rostros desconocidos. Allí, los ocho viajeros descubrirán que puede ser que no lleguen a Red Rock.",
+"image_url": "https://raw.githubusercontent.com/GaelRGuerreiro/fotosSlothSlider/main/Los_odiosos_ocho.jpg"
+},
+  
+{"name": "Peliculas de animacion",
+"description": "Rango es un camaleón que lleva toda su vida viviendo como mascota en un terrario, mirando cómo pasa el mundo a través del cristal. Sin embargo, un buen día cuando transportan su terrario, éste se cae del coche que lo transportaba en medio del desierto de Mojave. Rango acaba en un pueblo salvaje llamado Polvo, un lugar peligroso habitado por criaturas extrañas. Sin pretenderlo, Rango se convierte en el 'Sheriff'.",
+"image_url": "https://raw.githubusercontent.com/GaelRGuerreiro/fotosSlothSlider/main/Rango.jpg"
+},
+  
+{"name": "Peliculas Belicas",
+"description": "Tras el desembarco de Normandía, en plena Segunda Guerra Mundial, unos soldados americanos deben arriesgar sus vidas para salvar al soldado James Ryan, cuyos tres hermanos han muerto en la guerra.",
+"image_url": "https://raw.githubusercontent.com/GaelRGuerreiro/fotosSlothSlider/main/Saving_Private_Ryan.jpg"
+},
+  
+{"name": "Comedias",
+"description": "En 1939, a punto de estallar la Segunda Guerra Mundial, Guido llega a Arezzo con la intención de abrir una librería. Allí conoce a Dora y, a pesar de que está prometida con el fascista Rodolfo, acaba casándose con ella y tienen un hijo. Poco después de estallar la guerra, las tropas nazis llegan a Italia y los tres son internados en un campo de concentración. Allí, Guido construye una elaborada fantasía para proteger a su hijo y hacerle creer que la situación es tan solo un juego.",
+"image_url": "https://raw.githubusercontent.com/GaelRGuerreiro/fotosSlothSlider/main/La vida es bella.jpeg"
+}
+  
+]
