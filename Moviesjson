@@ -1,0 +1,38 @@
+[
+{"name": "Koe no katachi",
+"description": "DShôko Nishimiya, una estudiante de primaria sorda, empieza a sentir el bullying de sus nuevos compañeros cuando se cambia de colegio. El peor de todos es Ishida Shôya, quien termina por forzar que Nishimiya se cambie de escuela. Años después, Ishida buscará la redención de sus malas acciones. ",
+"image_url": "https://raw.githubusercontent.com/aseoanef/DEWS/main/recursos/A_Silent_Voice-681738753-mmed.jpg",
+"fecha": "16/03/18",
+"puntuacion": "10"
+},
+{"name": "Blade runner 2049",
+"description": "Tras la rebelión de los replicantes creados por bioingeniería para ser utilizados como mano de obra esclava y la prohibición a Tyrell Corporation de seguir con su fabricación, el empresario Niander Wallace adquirió lo que quedaba de Tyrell Corp. y creó una nueva línea de replicantes mucho más obedientes. Ahora, en el año 2049, los viejos modelos Nexus 8 que continúan con vida están siendo retirados. Los que les persiguen aún reciben el nombre de Blade Runner.",
+"image_url": "https://raw.githubusercontent.com/aseoanef/DEWS/main/recursos/Blade_Runner_2049-681477614-mmed.jpg",
+"fecha": "06/10/17",
+"puntuacion": "8"
+},
+{"name": "Ghost in the shell",
+"description": "La agente cibernética Motoko Kusanagi es la líder de la unidad de servicio secreto de Shell Squad, responsable de combatir el crimen. Motoko debe detener a una inteligencia artificial antes de que pueda adquirir una forma humana.",
+"image_url": "https://raw.githubusercontent.com/aseoanef/DEWS/main/recursos/ghost.webp",
+"fecha": "18/11/95",
+"puntuacion": "9"
+},
+{"name": "Lost in translation",
+"description": "Durante un viaje a Japón, Bob, un famoso actor, conoce a Charlotte. Ambos comparten el descontento con sus vidas lo que origina una sólida amistad.",
+"image_url": "https://raw.githubusercontent.com/aseoanef/DEWS/main/recursos/lost%20in%20translation.jpg",
+"fecha": "13/02/2004",
+"puntuacion": "6"
+},
+{"name": "Pacific rim",
+"description": "Hace mucho tiempo, legiones de criaturas monstruosas llamados Kaiju surgen del mar, llevando consigo una guerra. Para pelear a los Kaiju, la humanidad desarrolla robots gigantes llamados Jaegers, diseñados para ser dirigidos por dos humanos. Sin embargo, ni los Jaegers son suficientes para vencer a Kaiju, y la humanidad está al borde de la derrota. La última esperanza de la humanidad descansa en un ex-piloto fracasado, una aprendiz y un viejo y obsoleto Jaeger.",
+"image_url": "https://raw.githubusercontent.com/aseoanef/DEWS/main/recursos/pacific.jpg",
+"fecha": "09/08/13",
+"puntuacion": "7"
+},
+{"name": "Majo no Takkyūbin ",
+"description": "Al cumplir los 13 años, la brujita Kiki debe, como manda la tradición, abandonar su casa. Así llega a una ciudad donde un panadero la contrata para repartir el pan con su escoba. Un día, Kiki descubre que ya no puede hacerla levitar.",
+"image_url": "https://raw.githubusercontent.com/aseoanef/DEWS/main/recursos/kikis.jpg",
+"fecha": "12/01/14",
+"puntuacion": "5"
+}
+]
