@@ -43,7 +43,7 @@ public class TrendingFragment extends Fragment {
                 Request.Method.GET,
                 "https://raw.githubusercontent.com/aseoanef/SlothSlider/main/Moviesjson",
                 null,
-                new Response.Listener<JSONArray>() {
+                new Response.Listener<JSONArray>(){
                     @Override
                     public void onResponse(JSONArray response) {
                         Toast.makeText(getActivity(), "Imagenes recibidas", Toast.LENGTH_SHORT).show();

@@ -5,16 +5,38 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.SearchView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.StringRes;
 import androidx.fragment.app.Fragment;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class BuscarFragment extends Fragment implements SearchView.OnQueryTextListener {
     private static final String TEXT_ID = "text_id";
     private Intent intent;
+    private ArrayList<FilmData> arrayList;
 
+    private MovieViewAdapter adapter;
+    private String movie_title;
+    private android.widget.SearchView buscador;
+    // Método estático para crear una instancia del fragmento
     public static BuscarFragment newInstance(@StringRes int textId) {
         BuscarFragment frag = new BuscarFragment();
 
@@ -26,175 +48,81 @@ public class BuscarFragment extends Fragment implements SearchView.OnQueryTextLi
     }
 
     @Override
+    // Método llamado al crear la vista del fragmento
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable
     Bundle savedInstanceState) {
-        View layout = inflater.inflate(R.layout.addmovie_review_fragment, container, false);
+        View layout = inflater.inflate(R.layout.buscar_fragment, container, false);
+        // Obtener películas de la API
+        getMovies(layout);
+        // Configurar la barra de búsqueda
+        buscador = (SearchView) layout.findViewById(R.id.searchView);
+        buscador.setOnQueryTextListener(this);
+        // Configurar la lista de películas
+        ListView list = (ListView) layout.findViewById(R.id.listview);
+        arrayList = new ArrayList<>();// Inicializar la lista de películas
+        Bundle bundle = intent.getExtras();// Obtener datos extras del intent
+        if (bundle!=null){
+            movie_title = (String) bundle.getString("name");// Obtener el título de la película
+        }
+        adapter = new MovieViewAdapter(arrayList,getActivity());
+
+        // Mostrar o ocultar la lista de películas según si está vacía
+        if (arrayList.isEmpty()) {
+            list.setVisibility(View.GONE);
+        } else {
+            list.setVisibility(View.VISIBLE);
+            list.setAdapter(adapter);
+        }
         return layout;
     }
-
+    // Método para obtener películas de la API
+    public void getMovies(View layout){
+        // Crear una solicitud para obtener películas de la API
+        JsonArrayRequest request = new JsonArrayRequest(
+                Request.Method.GET,
+                "https://raw.githubusercontent.com/aseoanef/SlothSlider/main/Moviesjson",
+                null,
+                new Response.Listener<JSONArray>(){
+                    @Override
+                    // Manejar la respuesta exitosa de la solicitud
+                    public void onResponse(JSONArray response) {
+                        Toast.makeText(getActivity(), "Imagenes recibidas", Toast.LENGTH_SHORT).show();
+                        // Procesar la respuesta JSON y crear una lista de objetos FilmData con los datos de la URL.
+                        List<FilmData> allThefilms = new ArrayList<>();
+                        for (int i = 0; i < response.length(); i++) {
+                            try {
+                                JSONObject film = response.getJSONObject(i);
+                                FilmData data = new FilmData(film);
+                                allThefilms.add(data);
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    // Manejar errores de la solicitud
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        // Manejar los errores de la solicitud y mostrar un Toast con el mensaje de error.
+                        Toast.makeText(getActivity(), error.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                }
+        );
+        // Agregar la solicitud a la cola de Volley para su procesamiento.
+        RequestQueue queue = Volley.newRequestQueue(layout.getContext());
+        queue.add(request);
+    }
+    // Método llamado al enviar la consulta de búsqueda
     @Override
     public boolean onQueryTextSubmit(String query) {
         return false;
     }
-
+    // Método llamado al cambiar el texto de búsqueda
     @Override
     public boolean onQueryTextChange(String newText) {
         return false;
     }
 }
-//    public class ListwithProducts extends AppCompatActivity implements SearchView.OnQueryTextListener {
-//
-//        private android.widget.SearchView buscador;
-//        private CharSequence busqueda;
-//        private Integer list_id;
-//        private RequestQueue queue;
-//        static String host ="http://10.0.2.2:8000";
-//        private Context context;
-//        private String nombreLista;
-//        private ScrollView scrollView;
-//        private ListViewAdapter adapter;
-//        private TextView textView;
-//        private String nombre_lista;
-//        private ListView list;
-//        private ArrayList<Products> productsList;
-//        private ArrayList<Products> arrayList;
-//
-//        @Override
-//        protected void onCreate(@Nullable Bundle savedInstanceState) {
-//            super.onCreate(savedInstanceState);
-//            setContentView(R.layout.list_with_products);
-//            context= this;
-//            this.queue = Volley.newRequestQueue(this);
-//            arrayList = new ArrayList<>();
-//            adapter = new ListViewAdapter(this, arrayList);
-//            list = (ListView) findViewById(R.id.listview);
-//
-//            Intent intent = getIntent();
-//            Bundle bundle = intent.getExtras();
-//
-//
-//
-//            if (bundle!=null){
-//                list_id = (Integer) bundle.getInt("ID-LIST");
-//            }
-//            getSpecificList(list_id);
-//
-//
-//
-//            getAllProducts();
-//            buscador = (SearchView) findViewById(R.id.searchView);
-//            buscador.setOnQueryTextListener(this);
-//
-//        }
-//        public void getSpecificList(int list_id) throws NullPointerException {
-//            SharedPreferences preferences = context.getSharedPreferences("SESSIONS_APP_PREFS", MODE_PRIVATE);
-//            String username = preferences.getString("VALID_USERNAME", null);
-//
-//            JsonObjectRequestAuthenticated request = new JsonObjectRequestAuthenticated(
-//                    Request.Method.GET,
-//                    host + "/list/"+list_id,
-//                    null,
-//                    new Response.Listener<JSONObject>() {
-//                        @Override
-//                        public void onResponse(JSONObject response) {
-//                            Toast.makeText(context, "Lista recibida", Toast.LENGTH_LONG).show();
-//                            try {
-//                                nombre_lista = response.getString("name");
-//                            }catch (JSONException e){}
-//                            textView=findViewById(R.id.nombreLista);
-//                            textView.setText(nombre_lista);
-//
-//
-//                        }
-//                    }, new Response.ErrorListener() {
-//                @Override
-//                public void onErrorResponse(VolleyError error) {
-//                    Toast.makeText(context, "Problema recibiendo la lista", Toast.LENGTH_LONG).show();
-//                }
-//            }, context
-//            );
-//
-//            queue.add(request);
-//        }
-//
-//
-//        public void getAllProducts() {
-//            SharedPreferences preferences = context.getSharedPreferences("SESSIONS_APP_PREFS", MODE_PRIVATE);
-//            String username = preferences.getString("VALID_USERNAME", null);
-//
-//
-//            JsonArrayRequestAuthenticated request = new JsonArrayRequestAuthenticated(
-//                    Request.Method.GET,
-//                    host + "/product",
-//                    null,
-//                    new Response.Listener<JSONArray>() {
-//                        @Override
-//                        public void onResponse(JSONArray response) {
-//                            Toast.makeText(context, "Productos recibidos", Toast.LENGTH_LONG).show();
-//                            for (int i = 0; i < response.length(); i++) {
-//                                try {
-//                                    JSONObject productJson = response.getJSONObject(i);
-//                                    Products product = new Products(
-//                                            productJson.getInt("id"),
-//                                            productJson.getString("name"),
-//                                            productJson.getInt("price")
-//                                    );
-//                                    System.out.println("producto:"+ productJson.getString("name"));
-//                                    arrayList.add(product);
-//
-//
-//                                } catch (JSONException e) {
-//                                    throw new RuntimeException();
-//                                }
-//
-//
-//                                adapter = new ListViewAdapter(context, arrayList);
-//                                // Binds the Adapter to the ListView
-//                                list.setAdapter(adapter);
-//
-//                            }
-//                            System.out.println("lista-->"+arrayList);
-//                        }
-//                    }, new Response.ErrorListener() {
-//                @Override
-//                public void onErrorResponse(VolleyError error) {
-//                    Toast.makeText(context, "Problema recibiendo los productos", Toast.LENGTH_LONG).show();
-//                }
-//            }, context
-//            );
-//
-//            queue.add(request);
-//
-//        }
-//
-//
-//
-//        @Override
-//        public boolean onQueryTextSubmit(String query) {
-//            return false;
-//        }
-//
-//
-//        @Override
-//        public boolean onQueryTextChange(String newText) {
-//            String text = newText;
-//            adapter.filter(text);
-//            return false;
-//        }
-//
-//        public List<JSONObject> JSONArraytoArray(JSONArray array) {
-//            List<JSONObject> list = new ArrayList<>();
-//            for (int i = 0; i < array.length(); i++) {
-//                try {
-//                    list.add(array.getJSONObject(i));
-//                } catch (JSONException e) {
-//                    e.printStackTrace();
-//                }
-//            }
-//            return list;
-//        }
-//
-//
-//    }
-//
-//}
+
+

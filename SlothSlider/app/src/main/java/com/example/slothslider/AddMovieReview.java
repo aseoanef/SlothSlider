@@ -26,15 +26,21 @@ import org.json.JSONObject;
 
 public class AddMovieReview extends Fragment {
     private static final String TEXT_ID = "text_id";
+    private String title;
     private Intent intent;
     public static AddMovieReview newInstance(@StringRes int textId) {
         AddMovieReview frag = new AddMovieReview();
-
         Bundle args = new Bundle();
         args.putInt(TEXT_ID, textId);
         frag.setArguments(args);
 
         return frag;
+    }
+    public void setTitle(String title){
+        this.title=title;
+    }
+    public String getTitle(){
+        return title;
     }
     public Integer getScore(View layout){
         RadioButton button1=layout.findViewById(R.id.scorenumber1);
@@ -102,7 +108,6 @@ public class AddMovieReview extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable
     Bundle savedInstanceState) {
-
         View layout = inflater.inflate(R.layout.addmovie_review_fragment, container, false);
         Button send = layout.findViewById(R.id.send);
         send.setOnClickListener(new Button.OnClickListener() {
