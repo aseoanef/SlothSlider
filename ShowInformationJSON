@@ -1,19 +1,24 @@
 [
   
 {"name": "Peliculas Favoritas",
-"description": "Citizen Kane / Casablanca / The Godfather / The Wizard of Oz"
+"description": "Cars / Citizen Kane / Casablanca / The Godfather / The Wizard of Oz"
+"image_url": "https://raw.githubusercontent.com/GaelRGuerreiro/fotosSlothSlider/main/Cars.jpg"
 },
-   
+
 {"name": "Peliculas de animacion",
 "description": "Rango / Toy Story / Leo / Mutafukaz"
+"image_url": "https://raw.githubusercontent.com/GaelRGuerreiro/fotosSlothSlider/main/Rango.jpg"
 },
   
 {"name": "Peliculas Belicas",
-"description": "1974 / Dunkirk / Inglorious Bastards / Save Private Ryan "
+"description": "Saving Private Ryan / 1974 / Dunkirk / Inglorious Bastards  "
+"image_url": "https://raw.githubusercontent.com/GaelRGuerreiro/fotosSlothSlider/main/Saving_Private_Ryan.jpg"
 },
   
 {"name": "Volver a ver",
-"description": " Fury / Bolt / Oppenheimer / Napoleon"
+"description": " La Vida Es Bella / Fury / Bolt / Oppenheimer / Napoleon"
+"image_url": "https://raw.githubusercontent.com/GaelRGuerreiro/fotosSlothSlider/main/La vida es bella.jpeg"
+
 }
   
 ]
