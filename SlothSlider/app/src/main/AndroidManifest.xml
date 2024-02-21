@@ -18,14 +18,10 @@
         <activity
             android:name=".MainActivity"
             android:exported="true"></activity>
+
         <activity
             android:name=".HomeActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".HomeContentFragment"
@@ -51,6 +47,23 @@
         <activity
             android:name=".DiarioActivity"
             android:exported="true"></activity>
+        <activity
+            android:name=".WebViewActivity"
+            android:exported="true"></activity>
+        <activity android:name=".RegisterActivity"
+            android:exported="true"/>
+        <activity android:name=".LoginActivity"
+            android:exported="true">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
+        <activity android:name=".DeleteUserActivity"
+            android:exported="true"/>
+
+
     </application>
 
 </manifest>

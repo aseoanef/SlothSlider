@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "552135561673",
+    "firebase_url": "https://slothslider-e6e42-default-rtdb.firebaseio.com",
+    "project_id": "slothslider-e6e42",
+    "storage_bucket": "slothslider-e6e42.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:552135561673:android:c386ad1900a996cec35818",
+        "android_client_info": {
+          "package_name": "com.example.slothslider"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBOupq4Fs1oZ2FyeVUXioqESpjvgyPaz_M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
