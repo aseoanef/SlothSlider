@@ -1,8 +1,14 @@
 package com.example.slothslider;
-
 import android.content.Context;
+
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.Volley;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,9 +17,11 @@ import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.app.Activity;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.StringRes;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
@@ -24,6 +32,11 @@ public class AjustesContentFragment extends Fragment  {
     private Button ayuda;
     private Button privacidad;
     private Integer idweb;
+    private Button borrar_cuenta;
+    private RequestQueue queue;
+    private Activity activity;
+    private Context context;
+    private Button sesion;
 
 
 
@@ -47,6 +60,8 @@ public class AjustesContentFragment extends Fragment  {
         politica=layout.findViewById(R.id.politica);
         ayuda=layout.findViewById(R.id.ayuda);
         privacidad=layout.findViewById(R.id.privacidad);
+        borrar_cuenta = layout.findViewById(R.id.eliminarcuenta);
+        sesion = layout.findViewById(R.id.cerrarsesion);
 
 
         idioma.setOnClickListener(new View.OnClickListener() {
@@ -70,6 +85,7 @@ public class AjustesContentFragment extends Fragment  {
                 getActivity().startActivity(myIntent);
             }
         });
+
 
         ayuda.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -99,6 +115,23 @@ public class AjustesContentFragment extends Fragment  {
                 getActivity().startActivity(myIntent);
             }
         });
+
+        borrar_cuenta.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Dialog dialog = new Dialog();
+                dialog.show(getActivity().getSupportFragmentManager(), "dialog list");
+
+            }
+        });
+
+        sesion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                System.exit(0);
+            }
+        });
+
 
         if (getArguments() != null) {
             String text = getString(getArguments().getInt(TEXT_ID));
