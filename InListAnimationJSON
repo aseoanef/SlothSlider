@@ -1,0 +1,18 @@
+[
+  
+{"name": "Cars",
+"description": "El aspirante a campeón de carreras Rayo McQueen parece que está a punto de conseguir el éxito. Su actitud arrogante se desvanece cuando llega a una pequeña comunidad olvidada que le enseña las cosas importantes de la vida que había olvidado.",
+"image_url": "https://raw.githubusercontent.com/GaelRGuerreiro/fotosSlothSlider/main/Cars.jpg"
+},
+  
+{"name": "Toy Story",
+"description": "Los juguetes de Andy, un niño de seis años, temen que un nuevo regalo les sustituya en el corazón de su dueño. Woody, un vaquero que ha sido hasta ahora el juguete favorito, trata de tranquilizarlos hasta que aparece Buzz Lightyear. Lo peor es que el arrogante Buzz se cree que es una auténtico astronauta en plena misión para regresar a su planeta.",
+"image_url": "https://raw.githubusercontent.com/GaelRGuerreiro/fotosSlothSlider/main/Toy_Story.jpg"
+},
+  
+{"name": "How to Train Your Dragon",
+"description": "Hipo, un vikingo adolescente, comienza las clases de entrenamiento con dragones, y ve por fin una oportunidad para demostrar que es capaz de convertirse en guerrero, cuando hace amistad con un dragón herido.",
+"image_url":  "https://raw.githubusercontent.com/GaelRGuerreiro/fotosSlothSlider/main/como_entr_dragon.jpg"
+},
+ 
+]
