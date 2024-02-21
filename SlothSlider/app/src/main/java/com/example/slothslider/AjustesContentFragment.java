@@ -1,14 +1,9 @@
 package com.example.slothslider;
-import android.content.Context;
 
-import android.content.DialogInterface;
+
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.Volley;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,10 +13,9 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.app.Activity;
-
+import androidx.appcompat.app.AlertDialog;
 import androidx.annotation.Nullable;
 import androidx.annotation.StringRes;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
@@ -37,7 +31,7 @@ public class AjustesContentFragment extends Fragment  {
     private Activity activity;
     private Context context;
     private Button sesion;
-
+    private WebView webView;
 
 
 
@@ -64,6 +58,7 @@ public class AjustesContentFragment extends Fragment  {
         sesion = layout.findViewById(R.id.cerrarsesion);
 
 
+
         idioma.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -74,6 +69,7 @@ public class AjustesContentFragment extends Fragment  {
         politica.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 // Crear un Intent para iniciar WebViewActivity
                 Intent myIntent = new Intent(getActivity(), WebViewActivity.class);
 
@@ -131,6 +127,7 @@ public class AjustesContentFragment extends Fragment  {
                 System.exit(0);
             }
         });
+
 
 
         if (getArguments() != null) {
