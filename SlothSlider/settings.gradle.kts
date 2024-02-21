@@ -13,6 +13,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Sloth Slider"
+rootProject.name = "SlothSlider"
 include(":app")
- 
