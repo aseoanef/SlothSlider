@@ -1,6 +1,6 @@
 package com.example.slothslider;
 
-import android.graphics.drawable.Drawable;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,7 +11,6 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.annotation.StringRes;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -24,13 +23,11 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class TrendingFragment extends Fragment {
     private static final String TEXT_ID = "text_id";
-    public static DiarioContentFragment newInstance(@StringRes int textId) {
-        DiarioContentFragment frag = new DiarioContentFragment();
+    private Intent intent;
+    public static TrendingFragment newInstance(@StringRes int textId) {
+       TrendingFragment frag = new TrendingFragment();
 
         Bundle args = new Bundle();
         args.putInt(TEXT_ID, textId);
@@ -41,10 +38,10 @@ public class TrendingFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable
     Bundle savedInstanceState) {
-        View layout = inflater.inflate(R.layout.activity_destacados, container, false);
+        View layout = inflater.inflate(R.layout.trending_fragment, container, false);
         JsonArrayRequest request = new JsonArrayRequest(
                 Request.Method.GET,
-                "https://raw.githubusercontent.com/aseoanef/SlothSlider/main/",
+                "https://raw.githubusercontent.com/aseoanef/SlothSlider/main/Moviesjson",
                 null,
                 new Response.Listener<JSONArray>() {
                     @Override
@@ -98,7 +95,7 @@ public class TrendingFragment extends Fragment {
                 }
         );
         // Agregar la solicitud a la cola de Volley para su procesamiento.
-        RequestQueue queue = Volley.newRequestQueue(getContext());
+        RequestQueue queue = Volley.newRequestQueue(layout.getContext());
         queue.add(request);
         return layout;
     }
